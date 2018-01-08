@@ -1,14 +1,13 @@
 #require 'pry'
+player_choice = "" #Player can choose rock, paper or scissor
+player_score = 0 #Keep track of player score
+computer_score = 0 #Keep track of computer score
+play_again = "" #Check if player wants to play again
 
-player_choice = ""
-player_score = 0
-computer_score = 0
-play_again = ""
-
-until computer_score == 5 || player_score == 5 do
+until computer_score == 5 || player_score == 5 do #When either player or computer gets 5 points end game
 	until player_choice == "rock" || player_choice == "paper" || player_choice == "scissor" do
 		puts "Player pick rock, paper or scissor:"
-		player_choice = gets.chomp
+		player_choice = gets.chomp #Wait for player input
 		break
 	end
 	puts "Player chose: #{player_choice}"
@@ -17,7 +16,7 @@ until computer_score == 5 || player_score == 5 do
 	computer_choice = comp_array.sample #randomly choose one sample from the array
 	puts "Computer chose: #{computer_choice}"
 
-	if player_choice == computer_choice
+	if player_choice == computer_choice #Win and Lose logic for RPS game
 		puts "It's a Draw!"
 	else
 		case player_choice
@@ -50,8 +49,8 @@ until computer_score == 5 || player_score == 5 do
 
 	puts "Player Score is: #{player_score}"
 	puts "Computer Score is: #{computer_score}"
-	player_choice = ""
-	computer_choice = ""
+	player_choice = "" #Reset choices
+	computer_choice = "" #Reset choices
 
 	if player_score == 5 
 		puts "GAME OVER! Player Wins!"
@@ -62,9 +61,9 @@ until computer_score == 5 || player_score == 5 do
 		break
 	end
 
-	puts "Play again? 'n' to exit"
+	puts "Play again? Type 'n' to exit the game. Type any key to continue"
 	play_again = gets.chomp
-	if play_again == "n"
+	if play_again == "n" #If n is typed, end the game early and print scores and who won the game
 		if player_score > computer_score
 			puts "GAME OVER (early)! Player Wins!"
 		elsif computer_score > player_score
@@ -76,6 +75,6 @@ until computer_score == 5 || player_score == 5 do
 	end
 
 end
-# binding.pry 
+#binding.pry 
 
 
