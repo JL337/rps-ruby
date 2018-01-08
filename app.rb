@@ -61,7 +61,7 @@ until computer_score == 5 || player_score == 5 do #When either player or compute
 		break
 	end
 
-	puts "Play again? Type 'n' to exit the game. Type any key to continue"
+	puts "Play again? Type 'n' to exit the game. Type any key to continue."
 	play_again = gets.chomp
 	if play_again == "n" #If n is typed, end the game early and print scores and who won the game
 		if player_score > computer_score
