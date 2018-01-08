@@ -1,4 +1,4 @@
-require 'pry'
+#require 'pry'
 
 player_choice = ""
 player_score = 0
@@ -74,6 +74,7 @@ until computer_score == 5 || player_score == 5 do
 		end
 		break
 	end
+
 end
 # binding.pry 
 
